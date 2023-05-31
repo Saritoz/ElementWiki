@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Urbanist, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ct-header_hover {
+  @apply hover:before:animate-hover-header;
+}
+
+.ct-header_hover::before {
+  @apply absolute left-0 bottom-0 h-[1px] w-0 bg-white content-[''];
+}
+
+.bg-fire:hover {
+  @apply bg-gradient-to-tl from-white to-red-500;
+}
+
+.bg-ice:hover {
+  @apply bg-gradient-to-tl from-white to-indigo-500;
+}
+
+.bg-lightning:hover {
+  @apply bg-gradient-to-tl from-white to-yellow-500;
+}
+
+.bg-water:hover {
+  @apply bg-gradient-to-tl from-white to-blue-500;
+}
+
+.bg-wind:hover {
+  @apply bg-gradient-to-tl from-white to-green-500;
+}
+
+.bg-earth:hover {
+  @apply bg-gradient-to-tl from-white to-amber-500;
+}
+
+.bg-light:hover {
+  @apply bg-gradient-to-tl from-white to-neutral-500;
+}
+
+.bg-dark:hover {
+  @apply bg-gradient-to-tl from-white to-purple-500;
+}
+
+.home-elements-active {
+  color: var(--ct-color-elements);
+  border: 1px solid var(--ct-color-elements);
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.home-status-active {
+  @apply border-b-[1px] border-blue-3;
+}
