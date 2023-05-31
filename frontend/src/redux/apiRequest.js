@@ -1,4 +1,4 @@
-import { instanstAxios as axios } from "./axios_config";
+import { instanstAxios } from "./axios_config";
 import {
   getBasicElementsFailed,
   getBasicElementsStart,
@@ -22,6 +22,8 @@ import {
   getStatusFailed,
 } from "./statusSlice";
 
+const axios = instanstAxios();
+
 export const getAllElements = async (dispatch) => {
   dispatch(getElementsStart());
   try {
@@ -36,8 +38,10 @@ export const getBasicElements = async (dispatch) => {
   dispatch(getBasicElementsStart());
   try {
     const res = await axios.get("/element/getbasic");
+    console.log(res);
     dispatch(getBasicElementsSuccess(res.data));
   } catch (error) {
+    console.log(error);
     dispatch(getBasicElementsFailed());
   }
 };
