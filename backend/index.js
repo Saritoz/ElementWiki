@@ -4,17 +4,16 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
-const elementRoute = require("./routes/element")
-const statusRoute = require("./routes/status")
+const elementRoute = require("./routes/element");
+const statusRoute = require("./routes/status");
 
 dotenv.config();
 const app = express();
 const port = 7777;
 
-mongoose.connect(process.env.MONGODB_URL, () => {
-  console.log("Connected to DB");
-});
-
+mongoose
+  .connect(process.env.MONGODB_URL)
+  .then(() => console.log("connected to DB"));
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
