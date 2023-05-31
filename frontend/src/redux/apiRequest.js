@@ -1,4 +1,4 @@
-import axios from "axios";
+import { instanstAxios as axios } from "./axios_config";
 import {
   getBasicElementsFailed,
   getBasicElementsStart,
